@@ -1,0 +1,21 @@
+{
+  "name": "devkit",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": []
+  },
+  "scripts": {
+    "clean": "yarn workspaces run clean",
+    "dev": "yarn workspace @devkit/desktop compile && concurrently --kill-others \"yarn workspace @devkit/desktop compile -w\" \"yarn workspace @devkit/web start\" \"yarn workspace @devkit/mobile start\" \"wait-on http://localhost:3000 && yarn workspace @devkit/desktop start\"",
+    "dev:desktop": "cross-env BROWSER=none concurrently \"yarn dev:web\" \"yarn workspace @devkit/desktop compile -w\" \"wait-on http://localhost:3000 && yarn workspace @devkit/desktop start\"",
+    "dev:mobile": "yarn workspace @devkit/mobile compile && concurrently --kill-others \"yarn workspace @devkit/mobile compile -w\" \"yarn workspace @devkit/mobile start\"",
+    "dev:web": "yarn workspace @devkit/web compile && concurrently --kill-others \"yarn workspace @devkit/web compile -w\" \"yarn workspace @devkit/web start\"",
+    "format": "yarn workspaces run format",
+    "lint": "yarn workspaces run lint",
+    "studio": "yarn workspace @devkit/mobile studio",
+    "xcode": "yarn workspace @devkit/mobile xcode"
+  }
+}
