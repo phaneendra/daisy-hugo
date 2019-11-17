@@ -1,31 +1,32 @@
 {
-  "name": "@devkit/web",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-art": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-native-web": "^0.11.2",
-    "react-scripts": "2.1.8"
-  },
+  "name": "@academic-next/web",
+  "version": "1.0.0",
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "test": "jest",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "@material-ui/core": "^4.6.1",
+    "@mdx-js/mdx": "^1.1.0",
+    "@zeit/next-mdx": "1.2.0",
+    "next": "latest",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "devDependencies": {
-    "babel-plugin-react-native-web": "^0.11.2",
-    "react-app-rewired": "^2.1.1"
+    "@types/jest": "^24.0.11",
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.2",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.5.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "jest": "^24.5.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.8.4",
+    "typescript": "^3.3.3333"
   }
 }

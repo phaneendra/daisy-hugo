@@ -1,5 +1,5 @@
 {
-  "name": "devkit",
+  "name": "academic-next",
   "private": true,
   "workspaces": {
     "packages": [
@@ -9,13 +9,13 @@
   },
   "scripts": {
     "clean": "yarn workspaces run clean",
-    "dev": "yarn workspace @devkit/desktop compile && concurrently --kill-others \"yarn workspace @devkit/desktop compile -w\" \"yarn workspace @devkit/web start\" \"yarn workspace @devkit/mobile start\" \"wait-on http://localhost:3000 && yarn workspace @devkit/desktop start\"",
-    "dev:desktop": "cross-env BROWSER=none concurrently \"yarn dev:web\" \"yarn workspace @devkit/desktop compile -w\" \"wait-on http://localhost:3000 && yarn workspace @devkit/desktop start\"",
-    "dev:mobile": "yarn workspace @devkit/mobile compile && concurrently --kill-others \"yarn workspace @devkit/mobile compile -w\" \"yarn workspace @devkit/mobile start\"",
-    "dev:web": "yarn workspace @devkit/web compile && concurrently --kill-others \"yarn workspace @devkit/web compile -w\" \"yarn workspace @devkit/web start\"",
+    "dev": "yarn workspace @academic-next/desktop compile && concurrently --kill-others \"yarn workspace @academic-next/desktop compile -w\" \"yarn workspace @academic-next/web start\" \"yarn workspace @academic-next/mobile start\" \"wait-on http://localhost:3000 && yarn workspace @academic-next/desktop start\"",
+    "dev:desktop": "cross-env BROWSER=none concurrently \"yarn dev:web\" \"yarn workspace @academic-next/desktop compile -w\" \"wait-on http://localhost:3000 && yarn workspace @academic-next/desktop start\"",
+    "dev:mobile": "yarn workspace @academic-next/mobile compile && concurrently --kill-others \"yarn workspace @academic-next/mobile compile -w\" \"yarn workspace @academic-next/mobile start\"",
+    "dev:web": "yarn workspace @academic-next/web compile && concurrently --kill-others \"yarn workspace @academic-next/web compile -w\" \"yarn workspace @academic-next/web start\"",
     "format": "yarn workspaces run format",
     "lint": "yarn workspaces run lint",
-    "studio": "yarn workspace @devkit/mobile studio",
-    "xcode": "yarn workspace @devkit/mobile xcode"
+    "studio": "yarn workspace @academic-next/mobile studio",
+    "xcode": "yarn workspace @academic-next/mobile xcode"
   }
 }
