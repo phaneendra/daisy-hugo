@@ -1,10 +1,10 @@
 /*!
  =========================================================
- * Academic Next - v1.0.0 based on Material Kit - v2.0.2 and Material Kit React - v1.8.0
+ * Material Kit React - v1.8.0 based on Material Kit - v2.0.2
  =========================================================
- * Product Page: https://www.creative-tim.com/product/nextjs-material-kit
+ * Product Page: https://www.creative-tim.com/product/material-kit-react
  * Copyright 2019 Creative Tim (https://www.creative-tim.com)
- * Licensed under MIT (https://github.com/creativetimofficial/nextjs-material-kit/blob/master/LICENSE.md)
+ * Licensed under MIT (https://github.com/creativetimofficial/material-kit-react/blob/master/LICENSE.md)
  =========================================================
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
@@ -154,7 +154,7 @@ const title = {
   color: "#3C4858",
   margin: "1.75rem 0 0.875rem",
   textDecoration: "none",
-  fontWeight: 700,
+  fontWeight: "700",
   fontFamily: `"Roboto Slab", "Times New Roman", serif`
 };
 

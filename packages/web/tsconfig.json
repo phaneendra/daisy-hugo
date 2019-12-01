@@ -4,12 +4,8 @@
     "incremental": true,
     "target": "es5",
     "module": "esnext",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "importHelpers": true,
-    "declaration": true,
     "jsx": "preserve",
     "allowJs": true,
     "moduleResolution": "node",
@@ -22,9 +18,7 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "skipLibCheck": true,
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
+    "typeRoots": ["./node_modules/@types"],
     "strict": true,
     "alwaysStrict": true,
     "forceConsistentCasingInFileNames": true,
@@ -34,15 +28,9 @@
     "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
-      "@src/*": [
-        "./src/*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@theme/*": [
-        "./src/theme/*"
-      ]
+      "@src/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@theme/*": ["./src/theme/*"]
     },
     "isolatedModules": true
   },
@@ -53,9 +41,5 @@
     "**/*.test.ts",
     "**/*.test.tsx"
   ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
