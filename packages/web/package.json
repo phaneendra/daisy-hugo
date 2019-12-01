@@ -1,32 +1,70 @@
 {
   "name": "@academic-next/web",
   "version": "1.0.0",
+  "description": "A template for creating a static website blog using Next.js and MDX",
   "scripts": {
-    "test": "jest",
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "NODE_ENV=development next",
+    "build": "NODE_ENV=production next build",
+    "build-dev": "NODE_ENV=development next build",
+    "start": "NODE_ENV=production next start",
+    "clean": "rm -rf .next ; npm ci ; NODE_ENV=development yarn dev",
+    "export": "next build && next export -o dist",
+    "test": "jest"
   },
+  "keywords": [
+    "next.js",
+    "react.js",
+    "blog",
+    "mdx"
+  ],
+  "author": "phaneendra",
+  "license": "ISC",
+  "bin": {
+    "blog": "src/modules/cli/cli.js"
+  },
+  "browserslist": [
+    "last 2 version"
+  ],
   "dependencies": {
     "@material-ui/core": "^4.6.1",
-    "@mdx-js/mdx": "^1.1.0",
-    "@zeit/next-mdx": "1.2.0",
+    "@material-ui/icons": "^4.5.1",
+    "@mdx-js/loader": "^1.5.1",
+    "@mdx-js/mdx": "^1.5.1",
+    "@next/mdx": "^9.1.4",
+    "classnames": "^2.2.6",
+    "config": "^3.2.4",
+    "htmlescape": "^1.1.1",
     "next": "latest",
+    "next-compose-plugins": "^2.2.0",
+    "next-config": "^0.1.0",
+    "next-fonts": "^0.19.0",
+    "next-seo": "^3.0.0",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "remark-emoji": "^2.0.2",
+    "remark-images": "^1.0.0"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.9",
     "@types/jest": "^24.0.11",
     "@types/react": "^16.8.8",
     "@types/react-dom": "^16.8.2",
+    "@zeit/next-bundle-analyzer": "^0.1.2",
     "babel-core": "^6.26.3",
     "babel-jest": "^24.5.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
+    "imagemin-gifsicle": "^6.0.1",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-optipng": "^7.1.0",
+    "imagemin-svgo": "^7.0.0",
     "jest": "^24.5.0",
+    "next-optimized-images": "^2.5.4",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.8.4",
-    "typescript": "^3.3.3333"
+    "svg-sprite-loader": "^4.1.6",
+    "typescript": "^3.3.3333",
+    "webp-loader": "^0.5.0"
   }
 }

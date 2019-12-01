@@ -1,33 +1,37 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "esnext",
+    "incremental": true,
+    "target": "es5",
     "module": "esnext",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "importHelpers": true,
+    "declaration": true,
     "jsx": "preserve",
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
     "typeRoots": [
       "./node_modules/@types"
     ],
-    "lib": [
-      "dom",
-      "es2015",
-      "es2016"
-    ],
-    "strict": false,
+    "strict": true,
+    "alwaysStrict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
       "@src/*": [
@@ -35,8 +39,12 @@
       ],
       "@components/*": [
         "./src/components/*"
+      ],
+      "@theme/*": [
+        "./src/theme/*"
       ]
-    }
+    },
+    "isolatedModules": true
   },
   "exclude": [
     "node_modules",

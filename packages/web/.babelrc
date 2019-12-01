@@ -11,7 +11,8 @@
         ],
         "alias": {
           "@components": "./src/components",
-          "@src": "./src"
+          "@src": "./src",
+          "@theme": "./src/theme"
         },
         "extensions": [
           ".js",
