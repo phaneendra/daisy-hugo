@@ -3,19 +3,38 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "components/*",
+      "themes/*"
     ],
     "nohoist": []
   },
   "scripts": {
-    "clean": "yarn workspaces run clean",
-    "dev": "yarn workspace @academic-next/desktop compile && concurrently --kill-others \"yarn workspace @academic-next/desktop compile -w\" \"yarn workspace @academic-next/web start\" \"yarn workspace @academic-next/mobile start\" \"wait-on http://localhost:3000 && yarn workspace @academic-next/desktop start\"",
-    "dev:desktop": "cross-env BROWSER=none concurrently \"yarn dev:web\" \"yarn workspace @academic-next/desktop compile -w\" \"wait-on http://localhost:3000 && yarn workspace @academic-next/desktop start\"",
-    "dev:mobile": "yarn workspace @academic-next/mobile compile && concurrently --kill-others \"yarn workspace @academic-next/mobile compile -w\" \"yarn workspace @academic-next/mobile start\"",
-    "dev:web": "yarn workspace @academic-next/web compile && concurrently --kill-others \"yarn workspace @academic-next/web compile -w\" \"yarn workspace @academic-next/web start\"",
-    "format": "yarn workspaces run format",
-    "lint": "yarn workspaces run lint",
-    "studio": "yarn workspace @academic-next/mobile studio",
-    "xcode": "yarn workspace @academic-next/mobile xcode"
+    "prestart": "yarn build",
+    "start": "run-p start:*",
+    "start:watch": "tsc --build --watch",
+    "pretest": "yarn build",
+    "test": "jest --config=jest.json",
+    "build": "tsc --build",
+    "clean": "rimraf packages/*/{tsconfig.tsbuildinfo,lib,dist}"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@types/jest": "^24.0.13",
+    "@types/react": "^16.8.18",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-test-renderer": "^16.8.1",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "lerna": "^3.14.1",
+    "npm-run-all": "^4.1.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.5"
   }
 }
