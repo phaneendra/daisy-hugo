@@ -18,7 +18,7 @@
 - [ ] Enzyme - JavaScript testing utility for React that makes it easier to test your React Components output.
 - [ ] i18next - An internationalization-framework which provides a function that takes a key, some options, and returns the value for the current language. Helps you to add language translation support to your app.
 - [x] Generate Static website deployment
-- [ ] Material-UI: Styling and themeing using material-ui
+- [ ] theme-ui: Styling and themeing using theme-ui
 - [ ] Write posts in markdown, and use React components in your markdown with MDX. Or use plain React.
 - [ ] Perfect Lighthouse scores.
 - [ ] Next-SEO - Excellent SEO defaults

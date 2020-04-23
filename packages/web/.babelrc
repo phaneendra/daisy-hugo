@@ -7,12 +7,18 @@
       "module-resolver",
       {
         "root": [
-          "./src"
+          "./"
         ],
         "alias": {
           "@components": "./src/components",
+          "@libs": "./src/libs",
+          "@layouts": "./src/components/layouts",
+          "@templates": "./src/templates",
+          "@themes": "./src/themes",
           "@src": "./src",
-          "@theme": "./src/theme"
+          "@pages": "./pages",
+          "@config": "./config",
+          "@assets": "./public"
         },
         "extensions": [
           ".js",
@@ -22,5 +28,11 @@
         ]
       }
     ],
+    [
+      "babel-plugin-macros"
+    ],
+    [
+      "emotion"
+    ]
   ]
 }

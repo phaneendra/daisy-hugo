@@ -1,0 +1,15 @@
+.git/
+.gitignore
+**/.gitkeep
+**/.DS_Store
+.next/
+.dockerignore
+Dockerfile
+docker-compose.yml
+node_modules/
+nginx_runtime/
+node_runtime/
+README.md
+npm-debug.log
+.vscode
+.devcontainer

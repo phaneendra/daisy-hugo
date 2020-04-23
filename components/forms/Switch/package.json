@@ -1,0 +1,25 @@
+{
+  "name": "@academic-next/<component>",
+  "version": "0.0.1",
+  "description": "<component description>",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "repository": "",
+  "author": "phaneendra <phaneendra.krishnareddy@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "tsc -w --preserveWatchOutput"
+  }
+}

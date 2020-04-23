@@ -1,0 +1,38 @@
+FROM node:alpine
+
+RUN apk add --no-cache \
+    autoconf \
+    automake \
+    bash \
+    g++ \
+    libc6-compat \
+    libjpeg-turbo-dev \
+    libpng-dev \
+    make \
+    nasm
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package.json ./
+
+# If you are building your code for production
+RUN npm install
+
+# Bundle app source
+COPY ./ ./
+
+# Build app
+RUN npm run build
+
+# Expose the listening port
+EXPOSE 3000
+
+# Run container as non-root (unprivileged) user
+# The node user is provided in the Node.js Alpine base image
+USER node
+
+CMD [ "npm", "start" ]
