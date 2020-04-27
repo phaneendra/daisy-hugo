@@ -1,11 +1,19 @@
 {
-  "name": "academic-next",
+  "name": "@phaneendra/academic-next",
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*",
-      "components/*",
-      "themes/*"
+      "apps/*",
+      "libs/components/data_display/*",
+      "libs/components/elements/*",
+      "libs/components/feadback/*",
+      "libs/components/forms/*",
+      "libs/components/layouts/*",
+      "libs/components/navigation/*",
+      "libs/components/overlays/*",
+      "libs/components/page_sections/*",
+      "libs/components/utilities/*",
+      "libs/themes/*"
     ],
     "nohoist": []
   },
@@ -15,8 +23,19 @@
     "start:watch": "tsc --build --watch",
     "pretest": "yarn build",
     "test": "jest --config=jest.json",
-    "build": "tsc --build",
-    "clean": "rimraf packages/*/{tsconfig.tsbuildinfo,lib,dist}"
+    "build": "learna run build",
+    "fix-ts": "eslint --fix 'project-with-typescript/*.ts'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -26,6 +45,14 @@
     "@types/react": "^16.8.18",
     "@types/react-dom": "^16.8.4",
     "@types/react-test-renderer": "^16.8.1",
+    "@typescript-eslint/eslint-plugin": "2.2.0",
+    "@typescript-eslint/parser": "2.2.0",
+    "eslint": "6.3.0",
+    "eslint-config-prettier": "6.2.0",
+    "eslint-plugin-prettier": "3.1.0",
+    "husky": "3.0.5",
+    "lint-staged": "9.2.5",
+    "prettier": "1.18.2",
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
     "lerna": "^3.14.1",

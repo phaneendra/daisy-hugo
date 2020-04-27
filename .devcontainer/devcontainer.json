@@ -3,26 +3,57 @@
 {
 	"name": "Node.js (latest LTS) & TypeScript",
 	"dockerFile": "Dockerfile",
-
-	// Use 'settings' to set *default* container specific settings.json values on container create. 
+	// Use 'settings' to set *default* container specific settings.json values on container create.
 	// You can edit these settings after create using File > Preferences > Settings > Remote.
-	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash"
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"editor.formatOnSave": true,
+		"eslint.enable": true,
+		"eslint.alwaysShowStatus": true,
+		"eslint.autoFixOnSave": true,
+		"eslint.validate": [
+			"javascript",
+			"typescript"
+		]
 	},
-
 	// Uncomment the next line if you want to publish any ports.
-	// "appPort": [],
-
+	"appPort": [
+		3000,
+		4000,
+		8000
+	],
 	// Uncomment the next line to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
-
 	// Uncomment the next line to use a non-root user. On Linux, this will prevent
 	// new files getting created as root, but you may need to update the USER_UID
 	// and USER_GID in .devcontainer/Dockerfile to match your user if not 1000.
 	// "runArgs": [ "-u", "node" ],
-
 	// Add the IDs of extensions you want installed when the container is created in the array below.
 	"extensions": [
-		"ms-vscode.vscode-typescript-tslint-plugin"
+		"ms-vscode.vscode-typescript-tslint-plugin",
+		"CoenraadS.bracket-pair-colorizer-2",
+		"mikestead.dotenv",
+		"IBM.output-colorizer",
+		"oderwat.indent-rainbow",
+		"esbenp.prettier-vscode",
+		"dbaeumer.vscode-eslint",
+		"formulahendry.auto-rename-tag",
+		"jerryhong.autofilename",
+		"mrmlnc.vscode-autoprefixer",
+		"wwm.better-align",
+		"akamud.vscode-caniuse",
+		"kamikillerto.vscode-colorize",
+		"wayou.vscode-todo-highlight",
+		"eamodio.gitlens",
+		"zignd.html-css-class-completion",
+		"yzhang.markdown-all-in-one",
+		"davidanson.vscode-markdownlint",
+		"eg2.vscode-npm-script",
+		"christian-kohler.npm-intellisense",
+		"quicktype.quicktype",
+		"christian-kohler.path-intellisense",
+		"jounqin.vscode-mdx",
+		"dsznajder.es7-react-js-snippets"
 	]
 }

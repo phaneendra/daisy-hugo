@@ -1,1 +1,6 @@
+# preserve comment spacing in tsconfig
 tsconfig.json
+
+# do not run Prettier against JavaScript files
+# in "snapshots/" folders
+**/snapshots/*.js
