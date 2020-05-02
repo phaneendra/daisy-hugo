@@ -1,0 +1,1 @@
+module.exports = require("@phaneendra/academic-next.tools.config/eslintrc.js");

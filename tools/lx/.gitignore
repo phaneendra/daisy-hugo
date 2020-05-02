@@ -1,0 +1,38 @@
+
+/.nyc_output
+/package-lock.json
+/tmp
+
+
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# IDE Stuff
+/.idea
+/.vscode
+
+# dependencies
+node_modules
+
+# testing
+/coverage
+
+# builds
+build
+dist
+lib
+tmp
+.rpt2_cache
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+*-debug.log
+*-error.log
+
+# nyc
+/.nyc_output

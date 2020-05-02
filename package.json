@@ -3,17 +3,8 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "apps/*",
-      "libs/components/data_display/*",
       "libs/components/elements/*",
-      "libs/components/feadback/*",
-      "libs/components/forms/*",
-      "libs/components/layouts/*",
-      "libs/components/navigation/*",
-      "libs/components/overlays/*",
-      "libs/components/page_sections/*",
-      "libs/components/utilities/*",
-      "libs/themes/*"
+      "tools/*"
     ],
     "nohoist": []
   },
@@ -23,7 +14,7 @@
     "start:watch": "tsc --build --watch",
     "pretest": "yarn build",
     "test": "jest --config=jest.json",
-    "build": "learna run build",
+    "build": "lerna run build",
     "fix-ts": "eslint --fix 'project-with-typescript/*.ts'"
   },
   "husky": {
@@ -32,8 +23,8 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix",
       "git add"
     ]
   },
@@ -50,6 +41,10 @@
     "eslint": "6.3.0",
     "eslint-config-prettier": "6.2.0",
     "eslint-plugin-prettier": "3.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
     "husky": "3.0.5",
     "lint-staged": "9.2.5",
     "prettier": "1.18.2",

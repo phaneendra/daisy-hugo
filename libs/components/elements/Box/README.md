@@ -2,7 +2,7 @@
 
 > {{description}}
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/phaneendra/academic-next/academic-next.elements.box?style=for-the-badge)
+[![NPM](https://img.shields.io/npm/v/{{name}}.svg)](https://www.npmjs.com/package/{{name}}) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
@@ -12,7 +12,7 @@ npm install --save {{name}}
 
 ## Usage
 
-```jsx
+```tsx
 import React, { Component } from 'react'
 
 import MyComponent from '{{name}}'

@@ -1,25 +1,44 @@
 {
-  "name": "@academic-next/<component>",
-  "version": "0.0.1",
-  "description": "<component description>",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
-  "repository": "",
-  "author": "phaneendra <phaneendra.krishnareddy@gmail.com>",
-  "license": "MIT",
+  "name": "@phaneendra/academic-next.elements.menu-toggle",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  "author": "{{author}}",
+  "license": "{{license}}",
+  "repository": "{{repo}}",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.tsx",
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "lib"
-  ],
-  "dependencies": {},
-  "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+  "engines": {
+    "node": ">=10"
   },
-  "devDependencies": {},
   "scripts": {
-    "start": "tsc -w --preserveWatchOutput"
-  }
+    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "clean": "rimraf ./{tsconfig.tsbuildinfo,lib,dist}",
+    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "prepublish": "run-s build",
+    "test": "run-s test:unit test:lint test:build",
+    "test:build": "run-s build",
+    "test:lint": "eslint .",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "predeploy": "cd example && {{manager}} install && {{manager}} run build",
+    "deploy": "gh-pages -d example/build"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "microbundle-crl": "^0.13.8",
+    "cross-env": "^7.0.2",
+    "gh-pages": "^2.2.0",
+    "npm-run-all": "^4.1.5",
+    "react-scripts": "^3.4.1"
+  },
+  "files": [
+    "dist"
+  ]
 }

@@ -35,6 +35,9 @@
       ],
       "@phaneendra/academic-next.themes.*": [
         "libs/themes/*/src"
+      ],
+      "@phaneendra/academic-next.tools.*": [
+        "libs/tools/*/src"
       ]
     }
   }

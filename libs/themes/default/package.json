@@ -1,0 +1,44 @@
+{
+  "name": "@phaneendra/academic-next.themes.default",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  "author": "{{author}}",
+  "license": "{{license}}",
+  "repository": "{{repo}}",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.tsx",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "clean": "rimraf ./{tsconfig.tsbuildinfo,lib,dist}",
+    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "prepublish": "run-s build",
+    "test": "run-s test:unit test:lint test:build",
+    "test:build": "run-s build",
+    "test:lint": "eslint .",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "predeploy": "cd example && {{manager}} install && {{manager}} run build",
+    "deploy": "gh-pages -d example/build"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "microbundle-crl": "^0.13.8",
+    "cross-env": "^7.0.2",
+    "gh-pages": "^2.2.0",
+    "npm-run-all": "^4.1.5",
+    "react-scripts": "^3.4.1"
+  },
+  "files": [
+    "dist"
+  ]
+}

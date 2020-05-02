@@ -1,17 +1,5 @@
 {
-  "packages": [
-    "packages/*",
-    "components/data_display/*",
-    "components/elements/*",
-    "components/feadback/*",
-    "components/forms/*",
-    "components/layouts/*",
-    "components/navigation/*",
-    "components/overlays/*",
-    "components/page_sections/*",
-    "components/utilities/*",
-    "themes/*"
-  ],
+  "packages": ["libs/components/elements/*", "tools/*"],
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true
