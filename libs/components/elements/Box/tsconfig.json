@@ -1,0 +1,19 @@
+{
+  "include": ["src", "types"],
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "importHelpers": true,
+    "rootDir": "./src", /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+    "outDir": "./dist", /* Redirect output structure to the directory. */
+    "strict": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./", /* Base directory to resolve non-absolute module names. */
+    "paths": {
+      "@": ["./"],
+      "*": ["src/*", "node_modules/*"]
+    }
+  }
+}

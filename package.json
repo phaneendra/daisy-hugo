@@ -1,62 +1,38 @@
 {
-  "name": "@phaneendra/academic-next",
+  "name": "@phaneendra/acn",
   "private": true,
   "workspaces": {
     "packages": [
-      "libs/components/elements/*",
-      "tools/*"
+      "libs/components/elements/*"
     ],
     "nohoist": []
   },
   "scripts": {
-    "prestart": "yarn build",
-    "start": "run-p start:*",
-    "start:watch": "tsc --build --watch",
-    "pretest": "yarn build",
-    "test": "jest --config=jest.json",
+    "pretest": "run-s build",
+    "cmd-install": "yarn install",
+    "clean": "lerna run clean && rimraf ./{tsconfig.tsbuildinfo,dist,yarn.lock,node_modules}",
+    "test": "tsdx test --env=jsdom",
     "build": "lerna run build",
-    "fix-ts": "eslint --fix 'project-with-typescript/*.ts'"
+    "updatedeps": "ncu",
+    "reinstall": "run-s clean cmd-install"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "pretty-quick --staged"
     }
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --cache --fix",
-      "git add"
-    ]
-  },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "@types/jest": "^24.0.13",
-    "@types/react": "^16.8.18",
-    "@types/react-dom": "^16.8.4",
-    "@types/react-test-renderer": "^16.8.1",
-    "@typescript-eslint/eslint-plugin": "2.2.0",
-    "@typescript-eslint/parser": "2.2.0",
-    "eslint": "6.3.0",
-    "eslint-config-prettier": "6.2.0",
-    "eslint-plugin-prettier": "3.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.17.0",
-    "husky": "3.0.5",
-    "lint-staged": "9.2.5",
-    "prettier": "1.18.2",
-    "babel-jest": "^24.8.0",
-    "jest": "^24.8.0",
-    "lerna": "^3.14.1",
+    "lerna": "^3.22.0",
     "npm-run-all": "^4.1.5",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-test-renderer": "^16.8.6",
-    "rimraf": "^2.6.3",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.4.5"
+    "npm-check-updates": "^6.0.1",
+    "rimraf": "^3.0.2",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "husky": "^4.2.5",
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
+    "typescript": "^3.9.3"
   }
 }
