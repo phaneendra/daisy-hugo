@@ -1,0 +1,4 @@
+baseURL: https://phaneendra.github.io/daisy-hugo/
+languageCode: en-us
+title: My New Hugo Site
+theme: "daisy-hugo"
