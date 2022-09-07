@@ -13,6 +13,3 @@
     integrity="{{ $styles.Data.Integrity }}"
   />
 {{ end }}
-
-{{ $js := resources.Get "/js/alpine.js" }}
-<script src="{{ $js.RelPermalink }}" defer></script>

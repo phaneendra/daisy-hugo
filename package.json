@@ -21,7 +21,9 @@
   ],
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.4",
+    "alpinejs": "^3.10.3",
     "autoprefixer": "^10.4.8",
+    "concurrently": "^7.3.0",
     "daisyui": "^2.24.0",
     "degit": "^2.8.4",
     "postcss": "^8.4.16",
@@ -33,12 +35,11 @@
     "tailwindcss": "^3.1.8"
   },
   "scripts": {
-    "start": "hugo server --buildDrafts --watch --minify --disableFastRender --themesDir=../.. --source=exampleSite  --baseURL=http://localhost/daisy-hugo/ --port=1313",
-    "css:watch": "pnpm tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
-    "dev": "killall hugo && killall tailwindcss && pnpm css:watch && pnpm start",
-
-    "css:build": "pnpm tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css",
-    "site": "hugo --gc --minify --themesDir=../.. --source=exampleSite --config=config.yaml",
-    "build": "pnpm css:build && pnpm site"
+    "watch:hugo": "hugo server --buildDrafts --watch --minify --disableFastRender --themesDir=../.. --source=exampleSite  --baseURL=http://localhost/daisy-hugo/ --port=1313 --verbose",
+    "watch:tw": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
+    "start": "concurrently npm:watch:*",
+    "build:tw": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css",
+    "build:site": "hugo --gc --minify --themesDir=../.. --source=exampleSite --config=config.yaml",
+    "build": "pnpm build:tw && pnpm build:site"
   }
 }

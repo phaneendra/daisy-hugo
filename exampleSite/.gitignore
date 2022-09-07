@@ -18,7 +18,7 @@
 go.work
 
 # Generated files by hugo
-# /public/ ## keeping this for publishing to github pages
+/public/
 /resources/_gen/
 /assets/jsconfig.json
 hugo_stats.json

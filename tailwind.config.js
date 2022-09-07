@@ -5,5 +5,5 @@ module.exports = {
     "./exampleSite/layouts/**/*.html",
     "./exampleSite/content/**/*.{html,md}",
   ],
-  plugins: [require("daisyui"), require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };

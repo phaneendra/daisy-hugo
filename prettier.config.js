@@ -14,5 +14,8 @@ module.exports = {
       },
     },
   ],
-  plugins: [require.resolve("prettier-plugin-go-template")],
+  plugins: [
+    require.resolve("prettier-plugin-go-template"),
+    require.resolve("prettier-plugin-tailwindcss"),
+  ],
 };

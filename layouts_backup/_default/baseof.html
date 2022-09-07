@@ -1,4 +1,4 @@
-<!-- The following defines a simple base template at _default/baseof.html. As a default template, it is the shell from which all your pages will be rendered -->
+{{ printf "%#v" $.Site }}
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-us{{ end }}">
   <head>
@@ -9,3 +9,4 @@
     {{ block "main" . }}{{ end }}
   </body>
 </html>
+<!-- The following defines a simple base template at _default/baseof.html. As a default template, it is the shell from which all your pages will be rendered -->
